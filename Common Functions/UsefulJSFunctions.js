@@ -17,3 +17,7 @@ let sorted_array = inputArray.sort(function(a, b) {
   return a - b;
 });
 let last_saved_key = sorted_array[sorted_array.length - 1];
+
+function removeHtml(inputString) {
+  return inputString.replace(/<[^>]+>/g, "");
+}
