@@ -18,6 +18,7 @@ let sorted_array = inputArray.sort(function(a, b) {
 });
 let last_saved_key = sorted_array[sorted_array.length - 1];
 
+//Remove html from strings
 function removeHtml(inputString) {
   return inputString.replace(/<[^>]+>/g, "");
 }
@@ -31,4 +32,17 @@ function getUniqueArray(inputArray) {
     }
   }
   return newArray;
+}
+
+//Formats numbers' formatting by adding commas
+function formatNumber(num) {
+        return num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')
+}
+// Convert A String To Title Case
+function titleCase(str) {
+  let splitStr = str.toLowerCase().split(' ');
+  for (const i = 0; i < splitStr.length; i++) {
+    splitStr[i] = splitStr[i].charAt(0).toUpperCase() + splitStr[i].substring(1);
+  }
+  return splitStr.join(' ');
 }
