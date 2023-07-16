@@ -21,3 +21,14 @@ let last_saved_key = sorted_array[sorted_array.length - 1];
 function removeHtml(inputString) {
   return inputString.replace(/<[^>]+>/g, "");
 }
+
+// Get a new array consisting only unique elements of input array
+function getUniqueArray(inputArray) {
+  let newArray = [];
+  for (const element of inputArray) {
+    if (newArray.indexOf(element) == -1) {
+      newArray.push(element);
+    }
+  }
+  return newArray;
+}
