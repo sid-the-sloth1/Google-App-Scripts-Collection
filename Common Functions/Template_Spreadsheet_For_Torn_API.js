@@ -10,7 +10,7 @@ function writeUpdateMessage(message) {
   writeSingleValue(prefSheet, "B3", message);
 }
 function getTime(timestamp) {
-  //timestamp in milliseconds
+  //timestamp in seconds
   return Utilities.formatDate(new Date(timestamp*1000), "GMT", "dd MMMM yyyy  hh:mm:ss a");
 }
 
@@ -26,7 +26,7 @@ function myFunction() {
       let outputArray = [];
       let timestampArray = [];
       for (const identifier in data["events"]) {
-        let event = data["event"][identifier];
+        let event = data["events"][identifier];
         timestampArray.push(event["timestamp"]);
         if (event["timestamp"] > last_entry) {
           //Do whatever
