@@ -9,6 +9,9 @@ function writeUpdateMessage(message) {
   writeSingleValue(prefSheet, "B2", time);
   writeSingleValue(prefSheet, "B3", message);
 }
+function writeSingleValue(sheet, cellName, value) {
+  sheet.getRange(cellName).setValue(value);
+}
 function getTime(timestamp) {
   //timestamp in seconds
   return Utilities.formatDate(new Date(timestamp*1000), "GMT", "dd MMMM yyyy  hh:mm:ss a");
@@ -45,7 +48,7 @@ function myFunction() {
           return a - b;
         });
         let lastStamp = last_array[last_array.length - 1];
-        hiddenSheet.getRange("B1").setValue(timestamp);
+        hiddenSheet.getRange("B1").setValue(lastStamp);
         writeUpdateMessage("Successfully Updated");
       }
     }
